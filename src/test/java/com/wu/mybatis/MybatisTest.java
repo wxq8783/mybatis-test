@@ -29,12 +29,14 @@ public class MybatisTest {
      *      MapperProxy里面有DefaultSqlSession
      *
      * 4、执行增删改查方法
-     *  1)调用DefaultSqlSession的增删改查(Executor)
+     *   1)调用DefaultSqlSession的增删改查(Executor)
      *   2)会创建一个StatementHandler对象(同时也会创建出PreparedStatementHandler和ResultSetHandler)
      *   3)调用StatementHandler预编译参数及设置参数
      *   4)调用StatementHandler的增删改查方法
      *   5)ResultSetHandler封装结果
      *
+     * 注意：
+     *  四大对象，每一个创建的时候都有一个interceptorChain.pluginAll(Handler);
      * @throws Exception
      */
     @Test
